@@ -1,0 +1,45 @@
+<!doctype html><html lang="pt-br"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentação dos MCPs existentes</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="topbar"><nav class="nav"><div class="brand">SKATLAZ <span>SERVER 2.0</span></div><div class="links"><a href="index.html">Home</a><a href="architecture.html">Arquitetura</a><a href="client.html">Client Ask</a><a href="rag.html">RAG</a><a href="pipeline.html">Pipeline</a><a href="endpoints.html">Endpoints</a><a href="install.html">Instalação</a><a href="mcp.html">MCPs</a><a href="security.html">Boas práticas</a></div><div class="langbar"><a class="lang-btn active" href="mcp.html">Português</a><a class="lang-btn" href="en/mcp.html">English</a><a class="lang-btn" href="es/mcp.html">Español</a><a class="lang-btn" href="fr/mcp.html">Français</a></div></nav></div><main class="wrap"><section class="section"><span class="pill">MCP Registry</span><h2>Documentação dos MCPs existentes</h2><p>Esta página cataloga os pacotes MCP anexados ao Skatlaz Server 2.0. Cada MCP pode rodar como servidor FastAPI separado, expor sua documentação em /docs e ser chamado pelo Skatlaz Server através do Agent Router ou do MCP Runtime.</p><div class="diagram"><pre>Skatlaz Client Ask
+ → Skatlaz Server 2.0 /ai/mcp-task/
+ → MCP Runtime / Agent Router
+ → MCP específico: Office, Money, Music, SurfTask, GexProg...
+ → resposta JSON estruturada
+ → Chat / Dashboard / Relatório</pre></div></section><section class="section"><h2>Como orquestrar MCPs no Skatlaz Server</h2><p>Use o campo agent_slug para selecionar o domínio do agente e o campo task_type para indicar a ação. O servidor pode decidir se responde direto pelo LLM/RAG ou encaminha para um MCP especializado.</p><pre>{
+  "task_type": "code",
+  "prompt": "crie uma landing page em HTML",
+  "language": "html",
+  "target_os": "windows",
+  "agent_slug": "skatlaz-gexprog"
+}</pre></section><section class="section"><h2>Pacotes MCP anexados</h2><div class="mcp-grid"><article class="mcp-card"><h3>Skatlaz Studies MCP v2.0</h3><p>Estudos, chat, educação, quizzes, flashcards, planos de aula e creative canvas HTML/PPTX.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8045</span><span class="tag">study education creative</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_studies_mcp_v2_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8045/docs</pre></article><article class="mcp-card"><h3>Skatlaz SurfTask MCP v1.0</h3><p>Automação web, leitura de páginas, screenshots, OCR, QR/barcode, relatórios DOCX/CSV/XLSX.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8787</span><span class="tag">web automation browser</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_surftask_mcp_v1_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8787/docs</pre></article><article class="mcp-card"><h3>Skatlaz WorldSports MCP v1.0</h3><p>Esportes mundiais, times, atletas, campeonatos, Wikipedia/Wikidata, RSS e relatórios.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8097</span><span class="tag">sports data</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_worldsports_mcp_v1_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8097/docs</pre></article><article class="mcp-card"><h3>Skatlaz Entertainment MCP v1.0</h3><p>Filmes, séries, livros e música com fontes locais, TVMaze, Open Library, MusicBrainz e TMDb opcional.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8092</span><span class="tag">entertainment media</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_entertainment_mcp_v1_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8092/docs</pre></article><article class="mcp-card"><h3>Skatlaz GexProg MCP v1.0</h3><p>Generate, Explain, Execute Programming: gerar, explicar, depurar, refatorar e documentar código.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8077</span><span class="tag">programming code debug</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_gexprog_mcp_v1_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8077/docs</pre></article><article class="mcp-card"><h3>Skatlaz InfoToday MCP v1.0</h3><p>Cotidiano: Wikipedia, arXiv, clima, mapas, rotas, contatos, lista amarela e notícias.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8092</span><span class="tag">daily info maps weather</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_infotoday_mcp_v1_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8092/docs</pre></article><article class="mcp-card"><h3>Skatlaz MCP Music Producer v1.1</h3><p>Pipeline estável de áudio: análise, BPM, loudness, Demucs, masterização, ZIP e relatórios.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8787</span><span class="tag">audio mastering stable</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_mcp_music_producer_v1_1
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8787/docs</pre></article><article class="mcp-card"><h3>Skatlaz MCP Music Producer v2.0</h3><p>Produção musical com análise, stems, remaster, planos de arranjo e modo IA opcional MusicGen/AudioCraft.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8000</span><span class="tag">music ai dsp</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_mcp_music_producer_v2_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8000/docs</pre></article><article class="mcp-card"><h3>Skatlaz MCP Office AI Worker v2.1</h3><p>Documentos, planilhas, slides, visão/OCR, web, SQL, VBA, segurança e canvas HTML.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8077</span><span class="tag">office documents</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_mcp_office_ai_worker_v2_1
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8077/docs</pre></article><article class="mcp-card"><h3>Skatlaz Money MCP v2.0</h3><p>Finanças: moedas, câmbio, bolsa, cripto, ROI, parcelas, planilhas, gráficos e relatórios PDF.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8020</span><span class="tag">finance money</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_money_mcp_v2_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8020/docs</pre></article><article class="mcp-card"><h3>Skatlaz OpenStudio MCP v2.0</h3><p>Multimídia: áudio, vídeo, imagem, OCR, TTS, legendas, canvas, web scraping e publishing.</p><div class="mcp-meta"><span class="tag">Porta padrão: 8088</span><span class="tag">multimedia studio</span><span class="tag">FastAPI MCP</span></div><pre>cd skatlaz_openstudio_mcp_v2_0
+install_windows.bat
+run_server.bat
+# docs: http://127.0.0.1:8088/docs</pre></article></div></section><section class="callout"><h2>Pipeline recomendado</h2><p>Para produção, suba o Ollama, depois o Skatlaz Server Django e, em seguida, apenas os MCPs necessários para o cliente.</p></section></main><footer class="footer">Skatlaz Digi-AI Office · Skatlaz Server 2.0 · documentação HTML offline</footer></body></html>
