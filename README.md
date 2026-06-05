@@ -1,4 +1,4 @@
-![Skatlaz Server 2.0](assets/skatlaz_server_banner)
+![Skatlaz Server 2.0](assets/skatlaz_server_banner.jpg)
 
 # 🚀 Skatlaz Server AI 2.0
 
