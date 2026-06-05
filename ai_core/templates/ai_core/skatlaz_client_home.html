@@ -1,0 +1,299 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skatlaz Client 2.0</title>
+
+<style>
+:root{
+    --olive:#6B7A2D;
+    --brown:#7a5a24;
+    --gold:#C9A646;
+    --silver:#e7e7e7;
+    --dark:#181818;
+    --soft:#f8f5ec;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#ffffff,#f4f1e8);
+    color:#222;
+}
+
+.header{
+    width:100%;
+    padding:28px 6%;
+    background:linear-gradient(135deg,#f7f7f7,#dfdfdf);
+    border-bottom:5px solid var(--gold);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    color:var(--olive);
+}
+
+.logo span{
+    color:var(--brown);
+}
+
+.subtitle{
+    margin-top:8px;
+    color:#555;
+    max-width:780px;
+    line-height:1.6;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:24px;
+}
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border:1px solid #eee;
+}
+
+.card h2{
+    margin-top:0;
+    color:var(--olive);
+}
+
+label{
+    display:block;
+    margin-top:14px;
+    font-weight:bold;
+    color:var(--brown);
+}
+
+input, select, textarea{
+    width:100%;
+    margin-top:6px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:15px;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--olive),var(--brown));
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.92;
+}
+
+.chatbox{
+    height:520px;
+    overflow-y:auto;
+    background:#fafafa;
+    border-radius:14px;
+    padding:16px;
+    border:1px solid #ddd;
+}
+
+.msg{
+    padding:12px 14px;
+    border-radius:14px;
+    margin-bottom:12px;
+    line-height:1.6;
+    white-space:pre-wrap;
+}
+
+.user{
+    background:#eef3d9;
+    border-left:5px solid var(--olive);
+}
+
+.ai{
+    background:#fff;
+    border-left:5px solid var(--gold);
+}
+
+.status{
+    font-size:13px;
+    color:#666;
+    margin-top:10px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+@media(max-width:850px){
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .chatbox{
+        height:420px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Skatlaz <span>Client 2.0</span></div>
+    <div class="subtitle">
+        Ask interface connected to Skatlaz Server 2.0.  
+        Send prompts, orchestrate agents, consult RAG, generate code, debug systems and automate pipelines.
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Ask Skatlaz</h2>
+
+        <label>Prompt</label>
+        <textarea id="prompt" placeholder="Write your ask here..."></textarea>
+
+        <label>Task Type</label>
+        <select id="task_type">
+            <option value="ask">Ask / Chat</option>
+            <option value="code">Code</option>
+            <option value="debug">Debug</option>
+            <option value="rag">RAG Search</option>
+            <option value="crawler">Crawler</option>
+        </select>
+
+        <label>Language</label>
+        <select id="language">
+            <option value="html">HTML</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="css">CSS</option>
+            <option value="django">Django</option>
+            <option value="all">All</option>
+        </select>
+
+        <label>Target OS</label>
+        <select id="target_os">
+            <option value="all">All</option>
+            <option value="windows">Windows</option>
+            <option value="linux">Linux</option>
+            <option value="macosx">macOS</option>
+            <option value="android">Android</option>
+            <option value="ios">iOS</option>
+        </select>
+
+        <label>Agent Slug</label>
+        <input id="agent_slug" value="skatlaz-client-agent">
+
+        <button onclick="sendAsk()">Send Ask</button>
+
+        <div class="status" id="status">Ready.</div>
+    </section>
+
+    <section class="card">
+        <h2>Chat</h2>
+        <div class="chatbox" id="chatbox">
+            <div class="msg ai">Skatlaz Client 2.0 ready. Write your ask and connect with Skatlaz Server.</div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    Skatlaz Digi-AI Office · Skatlaz Server 2.0 · skatlaz.com
+</footer>
+
+<script>
+const API_URL = "/ai/mcp-task/";
+
+function addMessage(text, type){
+    const chatbox = document.getElementById("chatbox");
+    const div = document.createElement("div");
+    div.className = "msg " + type;
+    div.textContent = text;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+async function sendAsk(){
+    const prompt = document.getElementById("prompt").value.trim();
+    const status = document.getElementById("status");
+
+    if(!prompt){
+        status.textContent = "Write a prompt first.";
+        return;
+    }
+
+    const payload = {
+        task_type: document.getElementById("task_type").value,
+        prompt: prompt,
+        language: document.getElementById("language").value,
+        target_os: document.getElementById("target_os").value,
+        agent_slug: document.getElementById("agent_slug").value
+    };
+
+    addMessage(prompt, "user");
+    document.getElementById("prompt").value = "";
+    status.textContent = "Sending to Skatlaz Server...";
+
+    try{
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        let output = "";
+
+        if(data.answer){
+            output = data.answer;
+        }else if(data.response){
+            output = data.response;
+        }else if(data.result){
+            output = data.result;
+        }else{
+            output = JSON.stringify(data, null, 2);
+        }
+
+        addMessage(output, "ai");
+        status.textContent = "Done.";
+    }catch(error){
+        addMessage("Error connecting to Skatlaz Server:\n" + error.message, "ai");
+        status.textContent = "Connection error.";
+    }
+}
+</script>
+
+</body>
+</html>
