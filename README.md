@@ -1,5 +1,3 @@
-Claro. Abaixo está uma versão mais profissional, moderna e orientada ao GitHub para o **README.md principal do Skatlaz Server AI 2.0**, focada em arquitetura, MCPs, RAG, agentes, Ollama e automação empresarial.
-
 # 🚀 Skatlaz Server AI 2.0
 
 > Enterprise AI Platform for Agents, MCPs, RAG, Automation, Multimedia Processing and Local LLM Infrastructure.
