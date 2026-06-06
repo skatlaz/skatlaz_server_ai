@@ -1,436 +1,497 @@
-![Skatlaz Server 2.0](assets/skatlaz_server_banner.jpg)
+Segue um README.md profissional para o repositório **Skatlaz MCP Servers Collection** compatível com GitHub e alinhado ao ecossistema do **Skatlaz Server AI 2.0**.
 
-# 🚀 Skatlaz Server AI 2.0
+# 🚀 Skatlaz MCP Servers Collection
 
-> Enterprise AI Server Platform powered by Django, Ollama, RAG, MCP Servers and Generative AI.
-
-![Python](https://img.shields.io/badge/Python-3.12+-blue)
-![Django](https://img.shields.io/badge/Django-5.x-green)
-![License](https://img.shields.io/badge/License-Commercial-orange)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
+> Official MCP Servers Collection for **Skatlaz Server AI 2.0**
+>
+> Modular AI services designed to extend the capabilities of Skatlaz Server through specialized knowledge domains, automation pipelines, RAG systems, finetuning datasets, multimedia processing, education, finance, coding, and intelligent agents.
 
 ---
 
-# Overview
+# 🌎 About
 
-Skatlaz Server AI 2.0 is a complete Artificial Intelligence platform designed to build, deploy and manage AI-powered applications using local and cloud models.
+The **Skatlaz MCP Servers Collection** is a set of independent and modular MCP packages that can be installed into **Skatlaz Server AI 2.0**.
 
-The platform combines:
+Each MCP provides:
 
-* Local LLMs through Ollama
-* Google Gemini integration
-* RAG (Retrieval-Augmented Generation)
-* Fine-Tuning pipelines
-* MCP Server Architecture
-* Web Crawling and Data Collection
-* Agent Orchestration
-* Training Dataset Management
-* Enterprise Administration Interface
+* Specialized AI Agents
+* Domain Knowledge
+* RAG Collections
+* Finetuning Datasets
+* Prompt Templates
+* Automation Pipelines
+* Custom Workflows
+* API Integrations
 
-The goal of Skatlaz Server AI is to provide organizations with a self-hosted AI infrastructure capable of operating completely offline or in hybrid environments.
-
----
-
-# Main Features
-
-## 🤖 AI Models
-
-* Ollama Integration
-* Google Gemini Integration
-* Multiple LLM Providers
-* Local Inference
-* Cloud Inference
-* Model Switching
+The architecture allows organizations to deploy only the modules required for their environment.
 
 ---
 
-## 📚 RAG System
+# 🧠 What is an MCP?
 
-* Document Collections
-* Semantic Search
-* Embeddings
-* Knowledge Bases
-* Context Retrieval
-* Automatic Chunk Generation
+MCP stands for:
 
-Supported sources:
+**Modular Cognitive Processor**
 
-* PDF
-* DOCX
-* TXT
-* CSV
-* JSON
-* XML
-* RSS
-* Websites
-
----
-
-## 🌐 Web Intelligence
-
-Integrated Web Search:
-
-* DuckDuckGo Search
-* WebDiver Crawling
-* RSS Feed Processing
-* Website Extraction
-* Content Indexing
-
-The platform automatically searches the web when no internal knowledge is found.
-
----
-
-## 🧠 AI Agents
-
-Create specialized agents for:
-
-* Programming
-* Customer Support
-* Research
-* Content Generation
-* Data Analysis
-* Documentation
-
----
-
-## ⚙ MCP Server Architecture
-
-MCP Servers provide modular AI capabilities.
+An MCP acts as an intelligent extension layer for Skatlaz Server AI, enabling the platform to perform advanced tasks in specific domains.
 
 Examples:
 
-* Code Generation MCP
-* Research MCP
-* Music Producer MCP
-* Entertainment MCP
-* Documentation MCP
-* Marketing MCP
+* Software Development
+* Multimedia Production
+* Finance
+* Education
+* Entertainment
+* Research
+* Automation
+* Sports Analytics
 
 ---
 
-## 🔬 Fine Tuning
+# 📦 Available MCP Packages
 
-Supports:
+## 🎬 Entertainment MCP
 
-* LoRA
-* QLoRA
-* Dataset Preparation
-* Model Export
-* Ollama Export
-* GGUF Conversion
-* Safetensors Support
-
----
-
-## 📊 Administration Dashboard
-
-Manage:
-
-* AI Agents
-* Chat Sessions
-* Prompt Templates
-* RAG Collections
-* Training Datasets
-* Fine Tune Jobs
-* MCP Servers
-* Web Diver Tasks
-* Generated Artifacts
-
----
-
-# Architecture
+### Package
 
 ```text
-Users
-  │
-  ▼
-Skatlaz Server AI
-  │
-  ├── AI Agents
-  ├── MCP Servers
-  ├── RAG Engine
-  ├── Training Engine
-  ├── Web Search Engine
-  ├── WebDiver
-  ├── Ollama
-  ├── Gemini
-  └── API Layer
+skatlaz_entertainment_mcp_v1_0.zip
 ```
+
+### Features
+
+* Movies
+* TV Series
+* Music
+* Recommendations
+* Reviews
+* Summaries
+* Genre Classification
+
+### Pipeline Usage
+
+* Multimedia search
+* Content recommendations
+* Entertainment assistants
+* Summary generation
+
+### Finetuning & RAG
+
+* Media embeddings
+* Genre classification datasets
+* Movie knowledge collections
+* Music metadata collections
 
 ---
 
-# API Endpoints
+## 💻 GexProg MCP
 
-## Ask AI
-
-```http
-GET /ask/?q=what+is+django
-POST /ask/
-```
-
-Example:
-
-```json
-{
-    "prompt": "What is Django?"
-}
-```
-
----
-
-## Training
-
-```http
-POST /train/
-```
-
-Example:
-
-```json
-{
-    "question": "What is Django?",
-    "answer": "Django is a Python Web Framework."
-}
-```
-
----
-
-## Search
-
-```http
-GET /search/?q=django
-```
-
----
-
-## Feeds
-
-```http
-GET /feeds/
-```
-
----
-
-# Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/skatlaz/skatlaz_server_ai.git
-cd skatlaz_server_ai
-```
-
-## Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-Linux:
-
-```bash
-source venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Run Migrations
-
-```bash
-python manage.py migrate
-```
-
----
-
-## Create Administrator
-
-```bash
-python manage.py createsuperuser
-```
-
----
-
-## Start Server
-
-```bash
-python manage.py runserver
-```
-
-Open:
+### Package
 
 ```text
-http://127.0.0.1:8000/admin/
-user:skatlaz_admin
-pwd:skatlaz_123
-python manage.py changepassword skatlaz_admin
+skatlaz_gexprog_mcp_v1_0.zip
+```
+
+### Features
+
+* Multi-language programming
+* Code generation
+* Code review
+* Refactoring
+* Architecture analysis
+* DeepSeek-Code integration
+
+### Pipeline Usage
+
+* Software generation
+* Debugging
+* Documentation
+* Project scaffolding
+
+### Finetuning & RAG
+
+* Programming examples
+* Design patterns
+* Documentation datasets
+* Coding paradigms
+
+---
+
+## 🌍 InfoToday MCP
+
+### Package
+
+```text
+skatlaz_infotoday_mcp_v1_0.zip
+```
+
+### Features
+
+* General knowledge
+* Search
+* Weather
+* Maps
+* Transportation
+* News aggregation
+
+### Pipeline Usage
+
+* Research assistants
+* Information retrieval
+* News monitoring
+
+### Finetuning & RAG
+
+* Public APIs
+* Encyclopedic knowledge
+* News archives
+* Geographic datasets
+
+---
+
+## 🎵 Music Producer MCP 1.1
+
+### Package
+
+```text
+skatlaz_mcp_music_producer_v1_1.zip
+```
+
+### Features
+
+* Audio analysis
+* Stem separation
+* Audio mastering
+* DSP processing
+
+### Pipeline Usage
+
+* Audio restoration
+* Mixing
+* Mastering
+* Stem extraction
+
+### Finetuning & RAG
+
+* Audio engineering datasets
+* Mastering presets
+* DSP knowledge collections
+
+---
+
+## 🎼 Music Producer MCP 2.0
+
+### Package
+
+```text
+skatlaz_mcp_music_producer_v2_0.zip
+```
+
+### Features
+
+* AI Backing Vocals
+* AI Violins
+* AI Synthesizers
+* AI Piano
+* AI Arrangements
+* Music Generation
+
+### Pipeline Usage
+
+* Advanced music production
+* Composition assistance
+* Sound design
+
+### Finetuning & RAG
+
+* MusicGen datasets
+* AudioCraft datasets
+* Instrument generation models
+
+---
+
+## 📊 Office AI Worker MCP
+
+### Package
+
+```text
+skatlaz_mcp_office_ai_worker_v2_1.zip
+```
+
+### Features
+
+* PDF Processing
+* Word Documents
+* OCR
+* Translation
+* Dashboards
+* Presentations
+* Spreadsheet Analysis
+
+### Pipeline Usage
+
+* Productivity automation
+* Report generation
+* Business intelligence
+
+### Finetuning & RAG
+
+* Office templates
+* Financial reports
+* Corporate documentation
+
+---
+
+## 💰 Money MCP
+
+### Package
+
+```text
+skatlaz_money_mcp_v2_0.zip
+```
+
+### Features
+
+* Finance
+* Statistics
+* Currency Conversion
+* E-Commerce Analysis
+* Market Analytics
+
+### Pipeline Usage
+
+* Financial reports
+* Business projections
+* KPI dashboards
+
+### Finetuning & RAG
+
+* Historical financial data
+* Market datasets
+* Economic indicators
+
+---
+
+## 🎨 OpenStudio MCP
+
+### Package
+
+```text
+skatlaz_openstudio_mcp_v2_0.zip
+```
+
+### Features
+
+* Image Processing
+* Video Processing
+* Audio Processing
+* OCR
+* TTS
+* STT
+* Canvas Tools
+
+### Pipeline Usage
+
+* Content creation
+* Media enhancement
+* Voice processing
+
+### Finetuning & RAG
+
+* OCR datasets
+* Speech datasets
+* Image recognition datasets
+
+---
+
+## 🎓 Studies MCP
+
+### Package
+
+```text
+skatlaz_studies_mcp_v2_0.zip
+```
+
+### Features
+
+* Educational Agents
+* Quizzes
+* Presentations
+* Learning Plans
+* Academic Content
+
+### Pipeline Usage
+
+* Teaching assistants
+* Course generation
+* Knowledge evaluation
+
+### Finetuning & RAG
+
+* Educational content
+* Academic references
+* Quiz databases
+
+---
+
+## 🌐 SurfTask MCP
+
+### Package
+
+```text
+skatlaz_surftask_mcp_v1_0.zip
+```
+
+### Features
+
+* Web Crawling
+* Scraping
+* Website Summaries
+* Metadata Extraction
+* Thumbnail Generation
+
+### Pipeline Usage
+
+* Monitoring
+* Research
+* Website indexing
+
+### Finetuning & RAG
+
+* Metadata datasets
+* Website corpora
+* Search datasets
+
+---
+
+## ⚽ WorldSports MCP
+
+### Package
+
+```text
+skatlaz_worldsports_mcp_v1_0.zip
+```
+
+### Features
+
+* Sports Analytics
+* Live Scores
+* Rankings
+* Athletes
+* Historical Results
+
+### Pipeline Usage
+
+* Sports dashboards
+* Performance analysis
+* Competition monitoring
+
+### Finetuning & RAG
+
+* Historical sports datasets
+* Rankings databases
+* Sports RSS feeds
+
+---
+
+# 🔄 MCP Integration Flow
+
+```text
+User
+  ↓
+Skatlaz Server AI 2.0
+  ↓
+MCP Router
+  ↓
+Selected MCP
+  ↓
+RAG Collections
+  ↓
+Prompt Templates
+  ↓
+LLM Providers
+  ↓
+Response
 ```
 
 ---
 
-# Technology Stack
+# 🏗️ Compatible With
 
-* Python
-* Django
-* SQLite / PostgreSQL
+* Skatlaz Server AI 2.0
 * Ollama
-* Google Gemini
-* Sentence Transformers
+* DeepSeek
+* DeepSeek-Code
+* Gemini
+* OpenAI Compatible APIs
+* FastAPI
+* Django
+* SQLite
+* PostgreSQL
 * ChromaDB
 * FAISS
-* WebDiver
-* DuckDuckGo Search
 
 ---
 
-# Roadmap
+# 📁 Installation
 
-## Version 2.x
+```bash
+mkdir mcps
 
-* Advanced RAG
-* Multi-Agent Workflows
-* MCP Marketplace
-* Ollama Model Management
-* AI Analytics
+unzip skatlaz_gexprog_mcp_v1_0.zip -d mcps/
+unzip skatlaz_studies_mcp_v2_0.zip -d mcps/
+unzip skatlaz_openstudio_mcp_v2_0.zip -d mcps/
+```
 
-## Version 3.0
+Restart Skatlaz Server:
 
-* DeepSeek Code Integration
-* Autonomous Software Engineering
-* Katlaz++ Integration
-* Android Support
-* iOS Support
-* Visual AI Workflow Builder
-
----
-
-## License
-
-Skatlaz Server AI 2.0 is an Open Source and Freeware project developed by Skatlaz.
-
-You are free to:
-
-Use
-Study
-Modify
-Extend
-Distribute
-
-according to the license included in this repository.
-
-The goal of this project is to provide a complete Artificial Intelligence Server Platform for developers, researchers, students, businesses and technology enthusiasts.
-
-Developed By
-
-Skatlaz Digi-AI Office
-
-Website:
-
-https://skatlaz.com
-
-Contact:
-
-https://skatlaz.com/en/contact/
-
-Clone repository:
-
-git clone https://github.com/skatlaz/skatlaz_server_ai.git
-cd skatlaz_server_ai
-
-Create virtual environment:
-
-python -m venv venv
-
-Windows:
-
-venv\Scripts\activate
-
-Linux/macOS:
-
-source venv/bin/activate
-
-Install requirements:
-
-pip install -r requirements.txt
-
-Run database migrations:
-
-python manage.py migrate
-
-Create administrator account:
-
-python manage.py createsuperuser
-
-Recommended administrator:
-
-Username: skatlaz
-
-Start server:
-
+```bash
 python manage.py runserver
+```
 
-Open:
+or
 
-http://127.0.0.1:8000/admin/
-Default API Examples
-
-Ask AI:
-
-http://127.0.0.1:8000/ask/?q=what+is+django
-
-Search Knowledge Base:
-
-http://127.0.0.1:8000/search/?q=python
-
-Feeds:
-
-http://127.0.0.1:8000/feeds/
-Vision
-
-Building an open, extensible and self-hosted AI ecosystem powered by:
-
-Django
-Ollama
-Gemini
-MCP Servers
-RAG Systems
-Web Intelligence
-Katlaz++ Technologies
-
-for developers around the world.
-
-© Skatlaz Digi-AI Office
+```bash
+gunicorn skatlaz_server.wsgi
+```
 
 ---
 
-# About Skatlaz
+# 🧩 Future MCPs
 
-Skatlaz develops Artificial Intelligence, Software Engineering and Enterprise Automation solutions.
+Planned releases:
 
-Products:
+* Legal MCP
+* Medical MCP
+* Engineering MCP
+* Cybersecurity MCP
+* Marketing MCP
+* Scientific Research MCP
+* Business Intelligence MCP
+* Robotics MCP
 
-* Skatlaz Server AI
-* Katlaz++
-* Buskplay Platform
-* AI-DSP Press
+---
 
-Website:
+# 📜 License
+
+Developed by Skatlaz.
+
+This project is Open Source and Freeware.
+
+You are free to use, study, modify and distribute the software according to the license terms included with each MCP package.
+
+---
+
+# 🌐 Skatlaz
+
+Official Website:
 
 [https://skatlaz.com](https://skatlaz.com)
 
-© Skatlaz Digi-AI Office. All rights reserved.
+Contact:
 
-Esse formato fica bem profissional para GitHub, GitLab e apresentação comercial do Skatlaz Server AI 2.0.
+[https://skatlaz.com/en/contact/](https://skatlaz.com/en/contact/)
+
+© Skatlaz Digi-AI Office
+
+Esse README já está em padrão GitHub e combina com a documentação do **Skatlaz Server AI 2.0**, incluindo instalação, arquitetura MCP, integração com Ollama/DeepSeek/Gemini, RAG, finetuning e roadmap futuro.
