@@ -491,5 +491,4 @@ Contact:
 [https://skatlaz.com/en/contact/](https://skatlaz.com/en/contact/)
 
 © Skatlaz Digi-AI Office
-
-Esse README já está em padrão GitHub e combina com a documentação do **Skatlaz Server AI 2.0**, incluindo instalação, arquitetura MCP, integração com Ollama/DeepSeek/Gemini, RAG, finetuning e roadmap futuro.
+finetuning e roadmap futuro.
