@@ -274,6 +274,9 @@ Open:
 
 ```text
 http://127.0.0.1:8000/admin/
+user:skatlaz_admin
+pwd:skatlaz_123
+python manage.py changepassword skatlaz_admin
 ```
 
 ---
