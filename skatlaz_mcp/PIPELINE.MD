@@ -1,17 +1,3 @@
-Excelente. Para a documentação do **Skatlaz Server AI 2.0**, eu criaria um README separado chamado:
-
-```text
-README_PIPELINES.md
-```
-
-ou
-
-```text
-docs/pipelines/README.md
-```
-
-com uma visão arquitetural completa dos fluxos MCP.
-
 # 🔄 Skatlaz Server AI 2.0 — Intelligent Pipeline Architecture
 
 > Official Pipeline Documentation for Skatlaz Server AI 2.0
