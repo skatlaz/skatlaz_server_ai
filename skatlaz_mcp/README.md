@@ -1,5 +1,3 @@
-Segue um README.md profissional para o repositório **Skatlaz MCP Servers Collection** compatível com GitHub e alinhado ao ecossistema do **Skatlaz Server AI 2.0**.
-
 # 🚀 Skatlaz MCP Servers Collection
 
 > Official MCP Servers Collection for **Skatlaz Server AI 2.0**
