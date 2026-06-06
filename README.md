@@ -317,7 +317,7 @@ python manage.py changepassword skatlaz_admin
 
 ---
 
-License
+## License
 
 Skatlaz Server AI 2.0 is an Open Source and Freeware project developed by Skatlaz.
 
@@ -344,20 +344,6 @@ https://skatlaz.com
 Contact:
 
 https://skatlaz.com/en/contact/
-
-Project Author
-
-Igor Felix
-
-CTO & AI Software Engineer
-
-Creator of:
-
-Skatlaz Server AI
-Katlaz++
-Katlaz App
-Buskplay Platform
-Quick Installation
 
 Clone repository:
 
